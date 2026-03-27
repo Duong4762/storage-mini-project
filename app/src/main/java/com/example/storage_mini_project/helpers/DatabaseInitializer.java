@@ -36,7 +36,7 @@ public class DatabaseInitializer {
         });
     }
 
-    private static void insertSampleUsers(AppDB database) {
+    public static void insertSampleUsers(AppDB database) {
         User[] users = {
             new User("admin", "admin123", "Quản trị viên", "admin@movie.com", "0901234567"),
             new User("user1", "123456", "Nguyễn Văn A", "nguyenvana@gmail.com", "0912345678"),
@@ -49,7 +49,7 @@ public class DatabaseInitializer {
         Log.d(TAG, "Inserted " + users.length + " users");
     }
 
-    private static void insertSampleMovies(AppDB database) {
+    public static void insertSampleMovies(AppDB database) {
         String posterUrl = "https://cdn2.fptshop.com.vn/unsafe/Uploads/images/tin-tuc/176627/Originals/poster-phim-hoat-hinh-1.jpg";
         
         Movie[] movies = {
@@ -108,7 +108,7 @@ public class DatabaseInitializer {
         Log.d(TAG, "Inserted " + movies.length + " movies");
     }
 
-    private static void insertSampleTheaters(AppDB database) {
+    public static void insertSampleTheaters(AppDB database) {
         Theater[] theaters = {
             new Theater("CGV Vincom Center", "Quận 1", "72 Lê Thánh Tôn, P.Bến Nghé, Q.1, TP.HCM", "1900 6017", 8),
             new Theater("Galaxy Nguyễn Du", "Quận 1", "116 Nguyễn Du, P.Bến Thành, Q.1, TP.HCM", "1900 2224", 6),
@@ -126,7 +126,7 @@ public class DatabaseInitializer {
         Log.d(TAG, "Inserted " + theaters.length + " theaters");
     }
 
-    private static void insertSampleShowtimes(AppDB database) {
+    public static void insertSampleShowtimes(AppDB database) {
         String[] dates = {"28/03/2026", "29/03/2026", "30/03/2026", "31/03/2026", "01/04/2026", "02/04/2026"};
         String[] times = {"09:00", "11:30", "14:00", "16:30", "19:00", "21:30"};
         

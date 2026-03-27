@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -26,6 +29,26 @@
         <!-- Main Activity -->
         <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        
+        <!-- Movies List Activity -->
+        <activity
+            android:name=".activities.MoviesListActivity"
+            android:exported="false" />
+        
+        <!-- Movie Detail Activity -->
+        <activity
+            android:name=".activities.MovieDetailActivity"
+            android:exported="false" />
+        
+        <!-- Seat Selection Activity -->
+        <activity
+            android:name=".activities.SeatSelectionActivity"
+            android:exported="false" />
+        
+        <!-- Ticket Confirmation Activity -->
+        <activity
+            android:name=".activities.TicketConfirmationActivity"
             android:exported="false" />
 
     </application>
