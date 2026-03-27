@@ -55,7 +55,7 @@ public class ShowtimeActivity extends AppCompatActivity {
 
                         tvTime.setText("🕒 " + s.getShowTime());
                         tvDate.setText("📅 " + s.getShowDate());
-                        tvRoom.setText("Phòng: " + s.getRoomNumber());
+                        tvRoom.setText("Phòng: "    );
 
                         return convertView;
                     }

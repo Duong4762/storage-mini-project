@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private AppDB database;
     private TextView tvWelcome;
     private Button btnLogout;
+    private Button btnStartBooking;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         
         tvWelcome = findViewById(R.id.tvWelcome);
         btnLogout = findViewById(R.id.btnLogout);
+        btnStartBooking = findViewById(R.id.btnStartBooking);
         
         String username = LoginActivity.getCurrentUsername(this);
         tvWelcome.setText("Chào mừng, " + username + "!\n\n" +
@@ -48,5 +50,10 @@ public class MainActivity extends AppCompatActivity {
                 "Login: admin / admin123");
         
         btnLogout.setOnClickListener(v -> LoginActivity.logout(this));
+        
+        btnStartBooking.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, TheaterActivity.class);
+            startActivity(intent);
+        });
     }
 }
