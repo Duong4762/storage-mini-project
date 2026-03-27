@@ -1,6 +1,8 @@
 package com.example.storage_mini_project;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -14,6 +16,8 @@ import com.example.storage_mini_project.dal.AppDB;
 public class MainActivity extends AppCompatActivity {
 
     private AppDB database;
+    private TextView tvWelcome;
+    private Button btnLogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
         database = AppDB.getInstance(this);
-
+        
+        tvWelcome = findViewById(R.id.tvWelcome);
+        btnLogout = findViewById(R.id.btnLogout);
+        
+        String username = LoginActivity.getCurrentUsername(this);
+        tvWelcome.setText("Chào mừng, " + username + "!\n\nỨng dụng Movie Ticket\nDatabase đã sẵn sàng với 5 bảng:\nUsers, Movies, Theaters, Showtimes, Tickets");
+        
+        btnLogout.setOnClickListener(v -> LoginActivity.logout(this));
     }
 }
