@@ -18,15 +18,16 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         
-        <!-- Main Activity -->
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
+        <activity android:name=".MainActivity" android:exported="false" />
+        <activity android:name=".TheaterActivity" android:exported="false" />
+        <activity android:name=".MovieActivity" android:exported="false" />
+        <activity android:name=".ShowtimeActivity" android:exported="false" />
+        <activity android:name=".SeatActivity" android:exported="false" />
+        <activity android:name=".TicketDetailActivity" android:exported="false" />
 
     </application>
 

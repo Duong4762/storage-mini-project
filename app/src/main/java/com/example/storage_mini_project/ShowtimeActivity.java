@@ -30,54 +30,44 @@ public class ShowtimeActivity extends AppCompatActivity {
         db = AppDB.getInstance(this);
 
         int movieId = getIntent().getIntExtra("movie_id", -1);
+        int theaterId = getIntent().getIntExtra("theater_id", -1);
 
         new Thread(() -> {
-
-            // ✅ dùng đúng DAO của bạn
-            if (movieId != -1) {
+            if (movieId != -1 && theaterId != -1) {
+                showtimeList = db.showtimeDAO().getByMovieAndTheater(movieId, theaterId);
+            } else if (movieId != -1) {
                 showtimeList = db.showtimeDAO().getByMovie(movieId);
             } else {
                 showtimeList = db.showtimeDAO().getAll();
             }
 
             runOnUiThread(() -> {
-
                 listView.setAdapter(new ArrayAdapter<Showtime>(this, 0, showtimeList) {
-
                     @Override
                     public View getView(int position, View convertView, ViewGroup parent) {
-
                         if (convertView == null) {
-                            convertView = getLayoutInflater()
-                                    .inflate(R.layout.item_showtime, parent, false);
+                            convertView = getLayoutInflater().inflate(R.layout.item_showtime, parent, false);
                         }
-
                         Showtime s = getItem(position);
-
                         TextView tvTime = convertView.findViewById(R.id.tvTime);
                         TextView tvRoom = convertView.findViewById(R.id.tvRoom);
                         TextView tvDate = convertView.findViewById(R.id.tvDate);
 
-                        // ✅ đúng field theo DB
                         tvTime.setText("🕒 " + s.getShowTime());
                         tvDate.setText("📅 " + s.getShowDate());
-                        tvRoom.setText("Rạp ID: " + s.getTheaterId());
+                        tvRoom.setText("Phòng: " + s.getRoomNumber());
 
                         return convertView;
                     }
                 });
 
-                // ✅ CLICK → SEAT
                 listView.setOnItemClickListener((parent, view, position, id) -> {
                     Showtime s = showtimeList.get(position);
-
                     Intent intent = new Intent(ShowtimeActivity.this, SeatActivity.class);
                     intent.putExtra("showtime_id", s.getId());
                     startActivity(intent);
                 });
-
             });
-
         }).start();
     }
 }

@@ -1,5 +1,6 @@
 package com.example.storage_mini_project;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,6 +52,13 @@ public class TheaterActivity extends AppCompatActivity {
 
                         return convertView;
                     }
+                });
+
+                listView.setOnItemClickListener((parent, view, position, id) -> {
+                    Theater t = (Theater) parent.getItemAtPosition(position);
+                    Intent intent = new Intent(TheaterActivity.this, MovieActivity.class);
+                    intent.putExtra("theater_id", t.getId());
+                    startActivity(intent);
                 });
             });
 
