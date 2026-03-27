@@ -117,13 +117,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void createDefaultUser() {
-        executorService.execute(() -> {
-            User existingUser = database.userDAO().getByUsername("admin");
-            if (existingUser == null) {
-                User user = new User("admin", "admin123", "Admin User", "admin@movie.com", "0123456789");
-                database.userDAO().insert(user);
-            }
-        });
+        
     }
 
     private boolean isLoggedIn() {

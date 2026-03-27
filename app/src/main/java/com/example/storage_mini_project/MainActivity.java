@@ -12,6 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.storage_mini_project.dal.AppDB;
+import com.example.storage_mini_project.helpers.DatabaseInitializer;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,12 +32,20 @@ public class MainActivity extends AppCompatActivity {
         });
 
         database = AppDB.getInstance(this);
+        DatabaseInitializer.initializeSampleData(this);
         
         tvWelcome = findViewById(R.id.tvWelcome);
         btnLogout = findViewById(R.id.btnLogout);
         
         String username = LoginActivity.getCurrentUsername(this);
-        tvWelcome.setText("Chào mừng, " + username + "!\n\nỨng dụng Movie Ticket\nDatabase đã sẵn sàng với 5 bảng:\nUsers, Movies, Theaters, Showtimes, Tickets");
+        tvWelcome.setText("Chào mừng, " + username + "!\n\n" +
+                "🎬 Ứng dụng Movie Ticket\n\n" +
+                "✅ Database đã sẵn sàng với:\n" +
+                "• 3 Users\n" +
+                "• 12 Movies\n" +
+                "• 8 Theaters\n" +
+                "• 500+ Showtimes\n\n" +
+                "Login: admin / admin123");
         
         btnLogout.setOnClickListener(v -> LoginActivity.logout(this));
     }
