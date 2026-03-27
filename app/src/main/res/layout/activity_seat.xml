@@ -1,34 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_gradient">
+    android:background="#0E0F1A"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_horizontal">
 
-    <!-- TITLE -->
     <TextView
-        android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="My Orders"
-        android:textSize="22sp"
+        android:text="Chọn Ghế"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:layout_marginBottom="20dp"/>
 
-    <!-- LIST -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerOrders"
-        android:layout_width="0dp"
+    <!-- Screen Indicator -->
+    <View
+        android:layout_width="250dp"
+        android:layout_height="4dp"
+        android:background="#4E4E6A"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MÀN HÌNH"
+        android:textColor="#4E4E6A"
+        android:textSize="10sp"
+        android:layout_marginBottom="30dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:padding="12dp"
-        android:clipToPadding="false"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:layout_weight="1">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <GridLayout
+            android:id="@+id/gridSeats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:columnCount="8"
+            android:rowCount="6">
+
+            <!-- Row A -->
+            <TextView android:id="@+id/seatA1" style="@style/SeatStyle" android:text="A1" />
+            <TextView android:id="@+id/seatA2" style="@style/SeatStyle" android:text="A2" />
+            <TextView android:id="@+id/seatA3" style="@style/SeatStyle" android:text="A3" />
+            <TextView android:id="@+id/seatA4" style="@style/SeatStyle" android:text="A4" />
+            <TextView android:id="@+id/seatA5" style="@style/SeatStyle" android:text="A5" />
+            <TextView android:id="@+id/seatA6" style="@style/SeatStyle" android:text="A6" />
+            <TextView android:id="@+id/seatA7" style="@style/SeatStyle" android:text="A7" />
+            <TextView android:id="@+id/seatA8" style="@style/SeatStyle" android:text="A8" />
+
+            <!-- Row B -->
+            <TextView android:id="@+id/seatB1" style="@style/SeatStyle" android:text="B1" />
+            <TextView android:id="@+id/seatB2" style="@style/SeatStyle" android:text="B2" />
+            <TextView android:id="@+id/seatB3" style="@style/SeatStyle" android:text="B3" />
+            <TextView android:id="@+id/seatB4" style="@style/SeatStyle" android:text="B4" />
+            <TextView android:id="@+id/seatB5" style="@style/SeatStyle" android:text="B5" />
+            <TextView android:id="@+id/seatB6" style="@style/SeatStyle" android:text="B6" />
+            <TextView android:id="@+id/seatB7" style="@style/SeatStyle" android:text="B7" />
+            <TextView android:id="@+id/seatB8" style="@style/SeatStyle" android:text="B8" />
+
+            <!-- Row C -->
+            <TextView android:id="@+id/seatC1" style="@style/SeatStyle" android:text="C1" />
+            <TextView android:id="@+id/seatC2" style="@style/SeatStyle" android:text="C2" />
+            <TextView android:id="@+id/seatC3" style="@style/SeatStyle" android:text="C3" />
+            <TextView android:id="@+id/seatC4" style="@style/SeatStyle" android:text="C4" />
+            <TextView android:id="@+id/seatC5" style="@style/SeatStyle" android:text="C5" />
+            <TextView android:id="@+id/seatC6" style="@style/SeatStyle" android:text="C6" />
+            <TextView android:id="@+id/seatC7" style="@style/SeatStyle" android:text="C7" />
+            <TextView android:id="@+id/seatC8" style="@style/SeatStyle" android:text="C8" />
+
+            <!-- Row D -->
+            <TextView android:id="@+id/seatD1" style="@style/SeatStyle" android:text="D1" />
+            <TextView android:id="@+id/seatD2" style="@style/SeatStyle" android:text="D2" />
+            <TextView android:id="@+id/seatD3" style="@style/SeatStyle" android:text="D3" />
+            <TextView android:id="@+id/seatD4" style="@style/SeatStyle" android:text="D4" />
+            <TextView android:id="@+id/seatD5" style="@style/SeatStyle" android:text="D5" />
+            <TextView android:id="@+id/seatD6" style="@style/SeatStyle" android:text="D6" />
+            <TextView android:id="@+id/seatD7" style="@style/SeatStyle" android:text="D7" />
+            <TextView android:id="@+id/seatD8" style="@style/SeatStyle" android:text="D8" />
+
+            <!-- Row E -->
+            <TextView android:id="@+id/seatE1" style="@style/SeatStyle" android:text="E1" />
+            <TextView android:id="@+id/seatE2" style="@style/SeatStyle" android:text="E2" />
+            <TextView android:id="@+id/seatE3" style="@style/SeatStyle" android:text="E3" />
+            <TextView android:id="@+id/seatE4" style="@style/SeatStyle" android:text="E4" />
+            <TextView android:id="@+id/seatE5" style="@style/SeatStyle" android:text="E5" />
+            <TextView android:id="@+id/seatE6" style="@style/SeatStyle" android:text="E6" />
+            <TextView android:id="@+id/seatE7" style="@style/SeatStyle" android:text="E7" />
+            <TextView android:id="@+id/seatE8" style="@style/SeatStyle" android:text="E8" />
+
+            <!-- Row F -->
+            <TextView android:id="@+id/seatF1" style="@style/SeatStyle" android:text="F1" />
+            <TextView android:id="@+id/seatF2" style="@style/SeatStyle" android:text="F2" />
+            <TextView android:id="@+id/seatF3" style="@style/SeatStyle" android:text="F3" />
+            <TextView android:id="@+id/seatF4" style="@style/SeatStyle" android:text="F4" />
+            <TextView android:id="@+id/seatF5" style="@style/SeatStyle" android:text="F5" />
+            <TextView android:id="@+id/seatF6" style="@style/SeatStyle" android:text="F6" />
+            <TextView android:id="@+id/seatF7" style="@style/SeatStyle" android:text="F7" />
+            <TextView android:id="@+id/seatF8" style="@style/SeatStyle" android:text="F8" />
+
+        </GridLayout>
+    </ScrollView>
+
+    <!-- Legend -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="24dp">
+        <View android:layout_width="12dp" android:layout_height="12dp" android:background="@drawable/bg_seat_available"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=" Trống" android:textColor="#808080" android:layout_marginEnd="16dp" android:textSize="12sp"/>
+        <View android:layout_width="12dp" android:layout_height="12dp" android:background="@drawable/bg_seat_selected"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=" Đang chọn" android:textColor="#808080" android:layout_marginEnd="16dp" android:textSize="12sp"/>
+        <View android:layout_width="12dp" android:layout_height="12dp" android:background="@drawable/bg_seat_booked"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=" Đã đặt" android:textColor="#808080" android:textSize="12sp"/>
+    </LinearLayout>
+
+    <!-- Bottom Action -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="8dp">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tổng thanh toán"
+                android:textColor="#808080"
+                android:textSize="14sp"/>
+            <TextView
+                android:id="@+id/txtSelected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0đ"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+        <Button
+            android:id="@+id/btnBook"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="Mua Vé"
+            android:textAllCaps="false"
+            android:background="@drawable/button_gradient"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+</LinearLayout>

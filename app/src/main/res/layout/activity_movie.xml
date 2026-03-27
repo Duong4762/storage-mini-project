@@ -49,7 +49,7 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Product List"
+        android:text="Movie List"
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginTop="12dp"

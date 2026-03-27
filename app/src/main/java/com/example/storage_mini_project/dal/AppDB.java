@@ -6,33 +6,33 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import com.example.storage_mini_project.entities.Category;
-import com.example.storage_mini_project.entities.Order;
-import com.example.storage_mini_project.entities.OrderDetail;
-import com.example.storage_mini_project.entities.Product;
 import com.example.storage_mini_project.entities.User;
+import com.example.storage_mini_project.entities.Movie;
+import com.example.storage_mini_project.entities.Theater;
+import com.example.storage_mini_project.entities.Showtime;
+import com.example.storage_mini_project.entities.Ticket;
 
 @Database(entities = {
         User.class,
-        Category.class,
-        Product.class,
-        Order.class,
-        OrderDetail.class
-}, version = 1, exportSchema = false)
+        Movie.class,
+        Theater.class,
+        Showtime.class,
+        Ticket.class
+}, version = 2, exportSchema = false)
 public abstract class AppDB extends RoomDatabase {
 
-    private static final String DATABASE_NAME = "storage_mini_project.db";
+    private static final String DATABASE_NAME = "movie_ticket_app.db";
     private static volatile AppDB instance;
 
     public abstract UserDAO userDAO();
 
-    public abstract CategoyDAO categoryDAO();
+    public abstract MovieDAO movieDAO();
 
-    public abstract ProductDAO productDAO();
+    public abstract TheaterDAO theaterDAO();
 
-    public abstract OrderDAO orderDAO();
+    public abstract ShowtimeDAO showtimeDAO();
 
-    public abstract OrderDetailDAO orderDetailDAO();
+    public abstract TicketDAO ticketDAO();
 
     public static AppDB getInstance(Context context) {
         if (instance == null) {

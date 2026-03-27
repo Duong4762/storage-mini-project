@@ -1,6 +1,7 @@
 package com.example.storage_mini_project;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,7 +9,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.storage_mini_project.dal.AppDB;
+
 public class MainActivity extends AppCompatActivity {
+
+    private AppDB database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +25,8 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        database = AppDB.getInstance(this);
+
     }
 }
